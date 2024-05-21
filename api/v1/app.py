@@ -2,7 +2,6 @@
 """Script that starts a Flask app"""
 from api.v1.views import app_views
 from flask import Flask
-from flask_cors import CORS
 from models import storage
 from os import getenv
 
@@ -14,9 +13,6 @@ app.register_blueprint(app_views)
 def teardown(exception):
     """Closes session"""
     storage.close()
-
-"""Create the CORS instance to allow IPs"""
-CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
 
 if __name__ == "__main__":
     API_HOST = getenv("HBNB_API_HOST", "0.0.0.0")
