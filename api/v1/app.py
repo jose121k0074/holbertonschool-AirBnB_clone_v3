@@ -2,6 +2,7 @@
 """Script that starts a Flask app"""
 from flask import Flask
 from models import storage
+from os import getenv
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
