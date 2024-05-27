@@ -10,7 +10,7 @@ def status():
 
 
 
-@app.views_route("api/v1/stats", methods=["GET"], strict_slashes=False)
+@app_views.route("api/v1/stats", methods=["GET"], strict_slashes=False)
 def stats():
     """Retrieves the number of objects per each type"""
     from models.amenity import Amenity
