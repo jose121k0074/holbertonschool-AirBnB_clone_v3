@@ -14,6 +14,7 @@ def teardown(exception):
     """Closes session"""
     storage.close()
 
+
 @app.errorhandler(404)
 def errorhandler(error):
     """Returns a JSON-formatted 404 status code response"""
